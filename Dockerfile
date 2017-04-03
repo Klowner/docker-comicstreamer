@@ -19,10 +19,13 @@ RUN git clone --depth 1 https://github.com/Tristan79/ComicStreamer.git /app \
 	&& rm -f /app/libunrar/libunrar.so \
 	&& ln -s /usr/lib/libunrar.so /app/libunrar/libunrar.so
 
+# sqlite3 database and config goes here
+RUN mkdir -p /app/config
+
 WORKDIR /app
 VOLUME /comics
 EXPOSE 32500
 
-CMD ["/usr/bin/python2", "/app/comicstreamer"]
+CMD ["/usr/bin/python2", "/app/comicstreamer", "--user-dir /app/config"]
 
 
