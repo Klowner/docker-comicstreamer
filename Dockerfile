@@ -26,6 +26,6 @@ WORKDIR /app
 VOLUME /comics
 EXPOSE 32500
 
-CMD ["/usr/bin/python2", "/app/comicstreamer", "--user-dir /app/config"]
+CMD ["/usr/bin/python2", "/app/comicstreamer", "--user-dir", "/app/config"]
 
 
